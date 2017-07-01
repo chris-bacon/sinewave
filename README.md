@@ -2,6 +2,8 @@
 
 This program produces a modifiable sinewave. 
 
+Run `./sinewave.py`
+
 ## Controls
 
 W - Increase amplitude
