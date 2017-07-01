@@ -21,7 +21,7 @@ graph_start = (40, height - 40) # 0-point of graph
 middle = x_range[1] - ((x_range[1] - y_range[1]) / 2) # Middle of graph
 
 # Values for sinewave calculation
-amplitude, frequency, speed = 200, 2, 1
+amplitude, frequency, speed = 50, 2, 1
 
 # Event loop
 while True:
