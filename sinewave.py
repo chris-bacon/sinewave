@@ -3,8 +3,8 @@ import pygame, sys, math, time
 from pygame.locals import *
 
 def calculateY(amp, f, speed, middle, x, width):
-	# y(t) = amplitude*sin(2*pi*frequency*time + (speed * time))
-	return int(middle + amp * math.sin((2 * math.pi) * f * (float(x) / width) + (speed * time.time())))
+    # y(t) = amplitude*sin(2*pi*frequency*time + (speed * time))
+    return int(middle + amp * math.sin((2 * math.pi) * f * (float(x) / width) + (speed * time.time())))
 
 # Init
 pygame.init()
@@ -25,29 +25,29 @@ amplitude, frequency, speed = 50, 2, 1
 
 # Event loop
 while True:
-	display.fill((0, 0, 0))
-	# Draw x and y axis
-	pygame.draw.line(display, (255, 255, 255), graph_start, x_range) # x-axis
-	pygame.draw.line(display, (255, 255, 255), graph_start, y_range) # y-axis
+    display.fill((0, 0, 0))
+    # Draw x and y axis
+    pygame.draw.line(display, (255, 255, 255), graph_start, x_range) # x-axis
+    pygame.draw.line(display, (255, 255, 255), graph_start, y_range) # y-axis
 
-	# Create sine wave
-	for x in xrange(40, width):
-		display.set_at((x, calculateY(amplitude, frequency, speed, middle, x, width)), (255, 255, 255)) 		
+    # Create sine wave
+    for x in xrange(40, width):
+        display.set_at((x, calculateY(amplitude, frequency, speed, middle, x, width)), (255, 255, 255)) 		
 
-	for event in pygame.event.get():
-		if event.type == QUIT:
-			pygame.quit()
-			sys.exit()
-		elif event.type == KEYDOWN and event.key == K_ESCAPE:
-			pygame.quit()
-			sys.exit()
-		elif event.type == KEYDOWN and event.key == K_w:
-			amplitude += 5
-		elif event.type == KEYDOWN and event.key == K_s:
-			amplitude -= 5
-		elif event.type == KEYDOWN and event.key == K_a:
-			frequency -= 0.25
-		elif event.type == KEYDOWN and event.key == K_d:
-			frequency += 0.25
-	pygame.display.update()
-	pygame.time.Clock().tick(60)
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+        elif event.type == KEYDOWN and event.key == K_ESCAPE:
+            pygame.quit()
+            sys.exit()
+        elif event.type == KEYDOWN and event.key == K_w:
+            amplitude += 5
+        elif event.type == KEYDOWN and event.key == K_s:
+            amplitude -= 5
+        elif event.type == KEYDOWN and event.key == K_a:
+            frequency -= 0.25
+        elif event.type == KEYDOWN and event.key == K_d:
+            frequency += 0.25
+    pygame.display.update()
+    pygame.time.Clock().tick(60)
