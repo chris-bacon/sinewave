@@ -20,8 +20,7 @@ def main():
     display = pygame.display.set_mode((width, height))
 
     # Define the size of the graph
-    y_range = (40, 40)
-    x_range = (width - 40, height - 40)
+    y_range, x_range = (40, 40), (width - 40, height - 40) # x and y ranges
     graph_start = (40, height - 40) # 0-point of graph
     middle = x_range[1] - ((x_range[1] - y_range[1]) / 2) # Middle of graph
 
