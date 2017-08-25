@@ -40,9 +40,7 @@ def main():
             display.set_at((x, calculateY(amplitude, frequency, speed, middle, x, width)), (255, 255, 255))
 
         for event in pygame.event.get():
-            if event.type == QUIT:
-                terminate()
-            elif event.type == KEYDOWN and event.key == K_ESCAPE:
+            if (event.type == QUIT) or (event.type == KEYDOWN and event.key == K_ESCAPE):
                 terminate()
             elif event.type == KEYDOWN and event.key == K_w:
                 amplitude += 5
