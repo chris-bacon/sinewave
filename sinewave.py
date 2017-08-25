@@ -6,6 +6,10 @@ def calculateY(amp, f, speed, middle, x, width):
     # y(t) = amplitude*sin(2*pi*frequency*time + (speed * time))
     return int(middle + amp * math.sin((2 * math.pi) * f * (float(x) / width) + (speed * time.time())))
 
+def terminate():
+    pygame.quit()
+    sys.exit()
+
 def main():
     # Init
     pygame.init()
@@ -37,11 +41,9 @@ def main():
 
         for event in pygame.event.get():
             if event.type == QUIT:
-                pygame.quit()
-                sys.exit()
+                terminate()
             elif event.type == KEYDOWN and event.key == K_ESCAPE:
-                pygame.quit()
-                sys.exit()
+                terminate()
             elif event.type == KEYDOWN and event.key == K_w:
                 amplitude += 5
             elif event.type == KEYDOWN and event.key == K_s:
@@ -52,6 +54,6 @@ def main():
                 frequency += 0.25
         pygame.display.update()
         pygame.time.Clock().tick(60)
-        
+
 if __name__ == "__main__":
     main()
