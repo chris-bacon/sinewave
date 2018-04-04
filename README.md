@@ -4,6 +4,8 @@ This program produces a modifiable sinewave.
 
 Run `./sinewave.py`
 
+![Screenshot](./sinewave.png "Screenshot")
+
 ## Controls
 
 W - Increase amplitude
